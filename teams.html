@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Team Details</title>
+<style>
+  :root {
+    --orange: #FF6600;
+    --blue: #007BFF;
+    --white: #FFFFFF;
+    --dark-bg: #121212;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--dark-bg);
+    color: var(--white);
+  }
+  
+  header, footer {
+    background: var(--blue);
+    text-align: center;
+    padding: 20px 10px;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  
+  h2 {
+    color: var(--orange);
+  }
+  
+  .members {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .member-card {
+    background: var(--orange);
+    border-radius: 8px;
+    width: 180px;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 8px var(--orange);
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .member-card:hover {
+    transform: translateY(-6px);
+  }
+  
+  .member-card h3 {
+    margin: 10px 0 5px;
+  }
+  
+  .member-card p {
+    margin: 0;
+  }
+  
+  button {
+    background: var(--blue);
+    border: none;
+    color: var(--white);
+    padding: 10px 20px;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 id="teamName">Team Name</h1>
+</header>
+
+<main>
+  <p id="teamAchievements"></p>
+
+  <h2>Members</h2>
+  <div class="members" id="membersContainer">
+    <!-- Members go here -->
+  </div>
+
+  <button onclick="location.href='index.html'">← Back to Teams</button>
+</main>
+
+<footer>
+  <p>© 2025 CS2 Fansite | All rights reserved</p>
+</footer>
+
+<script>
+  const teams = {
+    team1: {
+      name: "Team Alpha",
+      achievements: "Won 3 Major tournaments in 2024",
+      members: [
+        { id: "player1", name: "AlphaOne", role: "AWPer" },
+        { id: "player2", name: "AlphaTwo", role: "In-Game Leader" },
+        { id: "player3", name: "AlphaThree", role: "Rifler" },
+      ],
+    },
+    team2: {
+      name: "Beta Warriors",
+      achievements: "2nd place in ESL Pro League",
+      members: [
+        { id: "player4", name: "BetaOne", role: "Rifler" },
+        { id: "player5", name: "BetaTwo", role: "Support" },
+        { id: "player6", name: "BetaThree", role: "Entry Fragger" },
+      ],
+    },
+    team3: {
+      name: "Gamma Strike",
+      achievements: "Best newcomer team 2024",
+      members: [
+        { id: "player7", name: "GammaOne", role: "AWPer" },
+        { id: "player8", name: "GammaTwo", role: "Rifler" },
+        { id: "player9", name: "GammaThree", role: "Support" },
+      ],
+    },
+  };
+
+  function loadTeam() {
+    // Get team id from URL hash e.g. #team1
+    const hash = window.location.hash.substr(1); 
+    if (!hash || !teams[hash]) {
+      document.getElementById('teamName').textContent = "Team not found";
+      return;
+    }
+
+    const team = teams[hash];
+    document.getElementById('teamName').textContent = team.name;
+    document.getElementById('teamAchievements').textContent = team.achievements;
+
+    const membersContainer = document.getElementById('membersContainer');
+    membersContainer.innerHTML = '';
+
+    team.members.forEach(member => {
+      const div = document.createElement('div');
+      div.className = 'member-card';
+      div.innerHTML = `<h3>${member.name}</h3><p>${member.role}</p>`;
+      div.onclick = () => {
+        location.href = `player.html#${member.id}`;
+      };
+      membersContainer.appendChild(div);
+    });
+  }
+
+  window.onload = loadTeam;
+</script>
+
+</body>
+</html>

@@ -1,43 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Historical Events</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CS2 Teams</title>
+<style>
+  /* Colors */
+  :root {
+    --orange: #FF6600;
+    --blue: #007BFF;
+    --white: #FFFFFF;
+    --dark-bg: #121212;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--dark-bg);
+    color: var(--white);
+  }
+
+  header, footer {
+    background: var(--blue);
+    text-align: center;
+    padding: 20px 10px;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--white);
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--white);
+  }
+  
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    background: var(--orange);
+    border-radius: 10px;
+    width: 250px;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--orange);
+    color: var(--white);
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .card h2 {
+    margin: 15px 0 10px;
+  }
+  
+  .card p {
+    margin: 0 15px 15px;
+  }
+</style>
 </head>
 <body>
-    <nav>
-        <div class="logo">History Timeline</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-        </ul>
-    </nav>
 
-    <main>
-        <h1>Major Historical Events</h1>
-        <div class="cards">
-            <div class="card" onclick="goToPage('ww1.html')">
-                <h2>World War I</h2>
-                <p>The Great War from 1914–1918.</p>
-                <button>Read More</button>
-            </div>
-            <div class="card" onclick="goToPage('ww2.html')">
-                <h2>World War II</h2>
-                <p>Global conflict from 1939–1945.</p>
-                <button>Read More</button>
-            </div>
-            <div class="card" onclick="goToPage('balkan-wars.html')">
-                <h2>The Balkan Wars</h2>
-                <p>Conflicts in Southeastern Europe (1912–1913).</p>
-                <button>Read More</button>
-            </div>
-        </div>
-    </main>
+<header>
+  <h1>Counter-Strike 2 Teams</h1>
+</header>
 
-    <footer>
-        <p>&copy; 2025 Historical Events Website. All rights reserved.</p>
-    </footer>
+<main>
+  <div class="cards">
+    <div class="card" onclick="location.href='teams.html#team1'">
+      <img src="Img/navi.png" alt="Navi" />
+      <h2>NAVI</h2>
+      <p>Top-tier team from Europe</p>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="card" onclick="location.href='team.html#team2'">
+      <img src="Img/teamLiquid.png" alt="Team Liquid" />
+      <h2>Team Liquid</h2>
+      <p>Aggressive and strategic squad</p>
+    </div>
+
+    <div class="card" onclick="location.href='team.html#team3'">
+      <img src="Img/bne.png" alt="BNE" />
+      <h2>BNE</h2>
+      <p>Kosovo's Passion</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 CS2 Fansite | All rights reserved</p>
+</footer>
+
 </body>
 </html>
