@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Calendar</title>
+  <link rel="stylesheet" href="calendar.css" />
+</head>
+<body>
+  <a href="index.html" class="back-button">← Back to Home</a>
+
+  <div class="calendar-container">
+    <header class="calendar-header">
+      <button id="prevMonth">&lt;</button>
+      <h2 id="calendarMonth"></h2>
+      <button id="nextMonth">&gt;</button>
+    </header>
+    <div class="calendar-grid" id="calendarGrid"></div>
+
+    <!-- Event Modal (for adding events) -->
+    <div id="eventModal" class="event-modal">
+      <div class="modal-content">
+        <h3>Add Event</h3>
+        <textarea id="eventText" placeholder="Write your event here..."></textarea>
+        <button id="saveEvent">Save Event</button>
+        <button id="closeModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="calendar.js"></script>
+</body>
+</html>

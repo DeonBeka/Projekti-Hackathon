@@ -1,119 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CS2 Teams</title>
-<style>
-  /* Colors */
-  :root {
-    --orange: #FF6600;
-    --blue: #007BFF;
-    --white: #FFFFFF;
-    --dark-bg: #121212;
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--dark-bg);
-    color: var(--white);
-  }
-
-  header, footer {
-    background: var(--blue);
-    text-align: center;
-    padding: 20px 10px;
-  }
-  
-  header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    color: var(--white);
-  }
-  
-  footer p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--white);
-  }
-  
-  main {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 15px;
-  }
-  
-  .cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .card {
-    background: var(--orange);
-    border-radius: 10px;
-    width: 250px;
-    cursor: pointer;
-    box-shadow: 0 0 10px var(--orange);
-    color: var(--white);
-    text-align: center;
-    transition: transform 0.2s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-8px);
-  }
-  
-  .card img {
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .card h2 {
-    margin: 15px 0 10px;
-  }
-  
-  .card p {
-    margin: 0 15px 15px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | MyTools</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Navigation Bar -->
+   
+  <header class="navbar">
+    <div class="logo">MyTools</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="todo.html">To-Do List</a></li>
+      </ul>
+    </nav>
+  </header>
+<button id="themeToggle" class="theme-btn">🌙</button>
 
-<header>
-  <h1>Counter-Strike 2 Teams</h1>
-</header>
-
-<main>
-  <div class="cards">
-    <div class="card" onclick="location.href='teams.html#team1'">
-      <img src="Img/navi.png" alt="Navi" />
-      <h2>NAVI</h2>
-      <p>Top-tier team from Europe</p>
+  <!-- Hero Section -->
+  <main class="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Productivity App</h1>
+      <p>Choose a tool to get started:</p>
+      <div class="card-container">
+        <div class="card">
+          <h2>📝 To-Do List</h2>
+          <p>Track your tasks and stay productive.</p>
+          <a href="todo.html" class="btn">Open To-Do</a>
+        </div>
+        <div class="card">
+          <h2>🌤️ Weather App</h2>
+          <p>Check the current weather in your city.</p>
+          <a href="weather.html" class="btn">Open Weather</a>
+        </div>
+        <div class="card">
+        <h3>Event Calendar</h3>
+        <p>Plan your events and tasks with a visual calendar!</p>
+        <a href="calendar.html" class="btn">Go to Calendar</a>
+      </div>
+      </div>
     </div>
+  </main>
+ 
 
-    <div class="card" onclick="location.href='team.html#team2'">
-      <img src="Img/teamLiquid.png" alt="Team Liquid" />
-      <h2>Team Liquid</h2>
-      <p>Aggressive and strategic squad</p>
-    </div>
 
-    <div class="card" onclick="location.href='team.html#team3'">
-      <img src="Img/bne.png" alt="BNE" />
-      <h2>BNE</h2>
-      <p>Kosovo's Passion</p>
-    </div>
-  </div>
-</main>
-
-<footer>
-  <p>© 2025 CS2 Fansite | All rights reserved</p>
-</footer>
-
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 MyTools. All rights reserved.</p>
+  </footer>
+  <script src="theme.js"></script>
 </body>
 </html>
